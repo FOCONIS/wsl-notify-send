@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"log"
 
-	toast "github.com/go-toast/toast"
+	"github.com/go-toast/toast"
 	"github.com/spf13/cobra"
 )
 

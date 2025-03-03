@@ -57,12 +57,12 @@ RUN \
     # --> Go symbols and outline for go to symbol support and test support 
     && go install github.com/acroca/go-symbols@v0.1.1 && go install github.com/ramya-rao-a/go-outline@7182a932836a71948db4a81991a494751eccfe77 \
     # --> GolangCI-lint
-    && curl -sfL https://install.goreleaser.com/github.com/golangci/golangci-lint.sh | sed 's/tar -/tar --no-same-owner -/g' | sh -s -- -b $(go env GOPATH)/bin
+    && curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/HEAD/install.sh | sh -s -- -b $(go env GOPATH)/bin v1.64.6
 
 # Add goreleaser
 RUN \
     # --> Go releaser 
-    curl -sfL https://install.goreleaser.com/github.com/goreleaser/goreleaser.sh | BINDIR="$GOPATH/bin" sh -s -- "v0.164.0"
+    go install github.com/goreleaser/goreleaser/v2@latest
 
 # __DEVCONTAINER_SNIPPET_INSERT__ (control where snippets get inserted using the devcontainer CLI)
 
